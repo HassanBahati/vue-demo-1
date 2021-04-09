@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <div class="row" style="text-align:left">
+    <div class="row" style="text-align: left">
       <div class="col-4">
         <h3>Student Registration Form</h3>
         <hr />
-        <h5>{{studentName}}</h5>
+        <h5>{{ studentName }}</h5>
         <div class="input-group mb-3">
           <div class="input-group mb-3">
             <input
@@ -16,7 +16,7 @@
               v-model="studentName"
             />
             <div class="input-group-append">
-              <button class="btn btn-primary" type="button">Register</button>
+              <button class="btn btn-primary" type="button" v-on:click='registerStudent'>Register</button>
             </div>
           </div>
         </div>
@@ -25,7 +25,18 @@
         <h3>Student Registration List</h3>
         <ol class="list-group list-group-numbered">
           <!-- v-bind can be represented with full colon  ---interpolating with 2 braces to avoid hard coding info  -->
-          <li class="list-group-item" v-for="student in students" :key='student'>{{student}}</li>
+          
+          <!-- onSubit 
+          onClick
+
+           -->
+          <li
+            class="list-group-item"
+            v-for="student in students"
+            :key="student"
+          >
+            {{ student }}
+          </li>
         </ol>
       </div>
     </div>
@@ -40,11 +51,19 @@ export default {
   name: "BodyComponent",
   data() {
     return {
-      students:[],
-      studentName: ''
+      students: [],
+      studentName: "",
     };
   },
-  methods: {},
+  methods: {
+    validateForm: function(){
+      //this.studentName- then you pass in your vaidaltions 
+    },
+    //function to add a name to the list of students 
+    registerStudent: function(){
+      this.students.push(this.studentName)
+    }
+  },
   components: {},
 };
 </script>
