@@ -10,6 +10,7 @@ import HomePage from './components/Home.vue';
 //routing
 
 
+
 </script>
 
 <style>

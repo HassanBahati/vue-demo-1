@@ -1,7 +1,12 @@
 <template>
-    <footer>
-        <div style="background: green, height:300px">
-
+    <footer class="green-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">products</div>
+                <div class="col-3">Services</div>
+                <div class="col-3">About Us</div>
+                <div class="col-3">Contact Us</div>
+            </div>
         </div>
     </footer>
 </template>
@@ -13,5 +18,7 @@ export default {
 </script>
 
 <style scoped>
-
+.green-bg{
+    background-color: green;
+}
 </style>
