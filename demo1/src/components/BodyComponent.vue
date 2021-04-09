@@ -21,23 +21,10 @@
           </div>
         </div>
       </div>
+      <!-- no colon before the unique key because we dont intend to bind it any attribute   -->
       <div class="col-8">
-        <h3>Student Registration List</h3>
-        <ol class="list-group list-group-numbered">
-          <!-- v-bind can be represented with full colon  ---interpolating with 2 braces to avoid hard coding info  -->
-          
-          <!-- onSubit 
-          onClick
-
-           -->
-          <li
-            class="list-group-item"
-            v-for="student in students"
-            :key="student"
-          >
-            {{ student }}
-          </li>
-        </ol>
+        <StudentList :students='students' uniqueKey="1" optionalProperty="Specified" /> 
+        <StudentList :students='students' uniqueKey="2"/> 
       </div>
     </div>
   </div>
@@ -47,6 +34,7 @@
 
 
 <script>
+import StudentList from './studentList.vue'
 export default {
   name: "BodyComponent",
   data() {
@@ -64,7 +52,8 @@ export default {
       this.students.push(this.studentName)
     }
   },
-  components: {},
+  components: {StudentList},
+  
 };
 </script>
 
