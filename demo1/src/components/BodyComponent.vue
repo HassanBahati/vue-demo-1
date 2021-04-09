@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <!-- no colon before the unique key because we dont intend to bind it any attribute   -->
+      <!-- no colon before the unique key because we dont intend to bind it any variable  -->
       <div class="col-8">
         <StudentList :students='students' uniqueKey="1" optionalProperty="Specified" /> 
         <StudentList :students='students' uniqueKey="2"/> 
@@ -53,6 +53,8 @@ export default {
     }
   },
   components: {StudentList},
+
+  //
   
 };
 </script>
